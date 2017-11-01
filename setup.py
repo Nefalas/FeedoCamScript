@@ -57,7 +57,7 @@ def installAPI():
     print("Installing API")
     os.system('git clone https://git.inixi.se/alexis/RaspiWiFi.git')
     os.system('sudo apt-get install python3 bundler libsqlite3-dev isc-dhcp-server hostapd -y')
-    os.chdir('/home/pi/RaspiWiFi/Configuration\ App')
+    os.chdir('/home/pi/RaspiWiFi/Configuration App')
     os.system('bundle install')
 
 
