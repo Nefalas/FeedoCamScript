@@ -5,7 +5,9 @@ import sys
 
 def init():
     os.chdir('/home/pi')
+    print()
     print("Updating")
+    print()
     os.system('sudo apt-get update')
     os.system('sudo apt-get upgrade')
 
@@ -49,6 +51,16 @@ def installGstreamer():
     print("Installing GStreamer")
     os.system('sudo apt-get install gstreamer1.0-tools -y')
 
+def installAPI
+    os.chdir('/home/pi')
+    print()
+    print("Installing API")
+    os.system('git clone https://git.inixi.se/alexis/RaspiWiFi.git')
+    os.system('sudo apt-get install python3 bundler libsqlite3-dev isc-dhcp-server hostapd -y')
+    os.chdir('/home/pi/RaspiWiFi/Configuration\ App')
+    os.system('bundle install')
+
+
 def finish():
     print()
     print()
@@ -59,6 +71,8 @@ def install():
     init()
     installWireguard()
     installGstreamer()
+    installAPI()
+    finish()
 
 if len(sys.argv) >= 2:
     if sys.argv[1] == "install":
