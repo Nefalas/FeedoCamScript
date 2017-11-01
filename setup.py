@@ -46,5 +46,7 @@ def finish():
 
 def install():
     init()
-    installWireguard():
-    installGstreamer():
+    installWireguard()
+    installGstreamer()
+
+install()
