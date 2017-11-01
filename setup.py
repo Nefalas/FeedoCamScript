@@ -51,7 +51,7 @@ def installGstreamer():
     print("Installing GStreamer")
     os.system('sudo apt-get install gstreamer1.0-tools -y')
 
-def installAPI
+def installAPI():
     os.chdir('/home/pi')
     print()
     print("Installing API")
