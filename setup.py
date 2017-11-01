@@ -3,7 +3,7 @@ import fileinput
 import os
 import sys
 
-def init():
+def initInstall():
     os.chdir('/home/pi')
     print()
     print("Updating")
@@ -61,22 +61,27 @@ def installAPI():
     os.system('bundle install')
 
 
-def finish():
+def finishInstall():
     print()
     print()
     print("Installation complete")
     print()
 
 def install():
-    init()
+    initInstall()
     installWireguard()
     installGstreamer()
     installAPI()
-    finish()
+    finishInstall()
+
+def config():
+    # TODO
 
 if len(sys.argv) >= 2:
     if sys.argv[1] == "install":
         install()
+    elif sys.argv[1] == "config":
+        config()
 else:
     print()
     print("Nothing to do")
