@@ -66,3 +66,4 @@ if len(sys.argv) >= 2:
 else:
     print()
     print("Nothing to do")
+    print()
