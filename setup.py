@@ -29,7 +29,7 @@ def installWireguard():
     os.system('')
 
 def test():
-    os.chdir('~')
+    os.chdir('/home/pi')
     os.system('mkdir test')
 
 test()
