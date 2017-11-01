@@ -14,7 +14,7 @@ def installWireguard():
     print("Installing WireGuard")
 
     print(" - installing required packages")
-    os.system('sudo apt-get install bc libcurses5-dev libmnl-dev \
+    os.system('sudo apt-get install bc libncurses5-dev libmnl-dev \
         build-essential git')
 
     # rpi-source
