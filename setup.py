@@ -11,38 +11,49 @@ def init():
 
 def installWireguard():
     os.chdir('/home/pi')
+    print()
     print("Installing WireGuard")
+    print()
 
+    print()
     print(" - installing required packages")
     os.system('sudo apt-get install bc libncurses5-dev libmnl-dev \
         build-essential git -y')
 
     # rpi-source
+    print()
     print(" - installing rpi-source")
     os.system('sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source \
         -O /usr/bin/rpi-source && sudo chmod +x /usr/bin/rpi-source \
         && /usr/bin/rpi-source -q --tag-update')
 
+    print()
     print(" - running rpi-source")
     os.system('rpi-source --skip-gcc')
 
     # WireGuard
+    print()
     print(" - installing WireGuard")
     os.chdir('/home/pi')
     os.system('git clone https://git.zx2c4.com/WireGuard')
     os.chdir('/home/pi/WireGuard/src/')
     os.system('make && sudo make install')
 
+    print()
     print(" - generating keys")
     os.system('wg genkey | tee server-private.key | wg pubkey > server-public.key')
 
 def installGstreamer():
     os.chdir('/home/pi')
+    print()
     print("Installing GStreamer")
     os.system('sudo apt-get install gstreamer1.0-tools -y')
 
 def finish():
+    print()
+    print()
     print("Installation complete")
+    print()
 
 def install():
     init()
@@ -52,3 +63,6 @@ def install():
 if len(sys.argv) >= 2:
     if sys.argv[1] == "install":
         install()
+else:
+    print()
+    print("Nothing to do")
