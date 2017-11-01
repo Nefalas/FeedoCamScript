@@ -15,7 +15,7 @@ def installWireguard():
 
     print(" - installing required packages")
     os.system('sudo apt-get install bc libncurses5-dev libmnl-dev \
-        build-essential git')
+        build-essential git -y')
 
     # rpi-source
     print(" - installing rpi-source")
@@ -39,7 +39,7 @@ def installWireguard():
 def installGstreamer():
     os.chdir('/home/pi')
     print("Installing GStreamer")
-    os.system('sudo apt-get install gstreamer1.0-tools')
+    os.system('sudo apt-get install gstreamer1.0-tools -y')
 
 def finish():
     print("Installation complete")
